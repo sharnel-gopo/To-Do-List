@@ -1,4 +1,4 @@
-document.getElementById('add-task-btn-').addEventListener('click', addTask);
+document.getElementById('add-task-btn').addEventListener('click', addTask);
 document.getElementById('task-input').addEventListener('keypress',function(event) {
   if (event.key === 'Enter') {
     addTask();
@@ -14,16 +14,16 @@ if (taskText !== '') {
   const taskItem = document.createElement('li');
 
   const taskSpan = document.createElement('span');
-  taskSpan.textContent = taskTest;
+  taskSpan.textContent = taskText;
   taskSpan.addEventListener('click', function() {
     taskSpan.parentNode.classList.toggle('completed');
   });
   
   const deleteButton = document.createElement('button');
   deleteButton.textContent = 'Delete';
-  deleteButton.EventListener('Click', function() {
+  deleteButton.addEventListener('Click', function() {
     taskList.removeChild(taskItem);
-  }),
+  });
   
   taskItem.appendChild(taskSpan);
   taskItem.appendChild(deleteButton);
